@@ -4,64 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="434e69572ce15af6" />
-    <title>Libertad Pro 1 | Suite</title>
-    <script src="https://pl28879951.effectivegatecpm.com/7d/b7/60/7db7603dd98fbf9a9c3338b181597f20.js"></script>
+    <title>Libertad Pro 1 | Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #6366f1; --dark: #0f172a; --bg: #f8fafc; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--dark); margin: 0; padding-bottom: 80px; }
-        header { background: #fff; padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #e2e8f0; }
-        .hero h1 { font-size: 3rem; font-weight: 800; margin: 0; letter-spacing: -1px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); margin: 0; padding-bottom: 80px; }
+        header { background: #fff; padding: 3rem 2rem; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; margin: 0; }
         .search-container { max-width: 600px; margin: -30px auto 0; padding: 0 1rem; }
-        #search { width: 100%; padding: 20px 30px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); font-size: 1.1rem; outline: none; box-sizing: border-box; }
-        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-        .app-card { background: #fff; padding: 1.5rem; border-radius: 24px; border: 1px solid #e2e8f0; text-decoration: none; color: inherit; transition: 0.3s; display: flex; align-items: center; gap: 15px; }
-        .app-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .app-icon { width: 50px; height: 50px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-        #cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #0f172a; color: white; padding: 20px; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; }
-        .cookie-btn { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 800; }
+        #search { width: 100%; padding: 20px; border-radius: 15px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); outline: none; }
+        .container { max-width: 1000px; margin: 4rem auto; padding: 0 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .app-card { background: #fff; padding: 1.5rem; border-radius: 20px; border: 1px solid #e2e8f0; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; }
     </style>
 </head>
 <body>
-
-<header class="hero">
-    <h1>Libertad <span style="color:var(--primary)">Pro 1</span></h1>
-    <p>Premium Suite (Apps #1 to #50)</p>
-</header>
-
-<div class="search-container">
-    <input type="text" id="search" placeholder="Search tools..." onkeyup="filterApps()">
-</div>
-
+<header class="hero"><h1>Libertad Pro 1</h1></header>
+<div class="search-container"><input type="text" id="search" placeholder="Search apps..." onkeyup="filter()"></div>
 <div class="container">
     <div class="grid" id="appGrid">
-        <a href="nurse-loan-refinance-ca/" class="app-card" data-name="nurse student loan refinance california">
-            <div class="app-icon">🏥</div>
-            <div class="app-info"><h3>#1 Nurse Loan Refi</h3><p>California Edition</p></div>
-        </a>
+        <a href="nurse-loan-refinance-ca/" class="app-card"><div>🏥</div><h3>#1 Nurse Loan</h3></a>
+        <a href="texas-home-buyer-tool/" class="app-card"><div>🏠</div><h3>#2 TX Home</h3></a>
+        <a href="3-trucker-tax-estimator/" class="app-card"><div>🚛</div><h3>#3 Trucker Tax</h3></a>
+        <a href="4-florida-solar-roi/" class="app-card"><div>☀️</div><h3>#4 Solar ROI</h3></a>
+        <a href="5-uk-severance-calc/" class="app-card"><div>🇬🇧</div><h3>#5 UK Redundancy</h3></a>
     </div>
 </div>
-
-<div id="cookie-banner">
-    <div>We use cookies. <button class="cookie-btn" onclick="acceptCookies()">Accept</button></div>
-</div>
-
 <script>
-    function filterApps() {
-        let input = document.getElementById('search').value.toLowerCase();
+    function filter() {
+        let val = document.getElementById('search').value.toLowerCase();
         let cards = document.getElementsByClassName('app-card');
-        for (let i = 0; i < cards.length; i++) {
-            let name = cards[i].getAttribute('data-name').toLowerCase();
-            cards[i].style.display = name.includes(input) ? "flex" : "none";
+        for (let card of cards) {
+            card.style.display = card.innerText.toLowerCase().includes(val) ? "flex" : "none";
         }
-    }
-    function acceptCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        localStorage.setItem('cookies_accepted_lib1', 'true');
-    }
-    if (localStorage.getItem('cookies_accepted_lib1') === 'true') {
-        document.getElementById('cookie-banner').style.display = 'none';
     }
 </script>
 </body>
