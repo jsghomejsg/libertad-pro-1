@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Nurse Student Loan Refinance Calculator | California 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estética Premium Médica/Financiera */
+        :root { --med-blue: #0284c7; --med-dark: #0f172a; --bg: #f8fafc; --accent: #10b981; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #334155; margin: 0; line-height: 1.6; }
+        .top-bar { background: var(--med-dark); color: white; padding: 15px 20px; font-weight: 800; letter-spacing: 1px; text-align: center; }
+        .container { max-width: 950px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media(max-width: 768px) { .container { grid-template-columns: 1fr; margin: 20px auto; gap: 20px; } }
+        
+        /* Panel Izquierdo: Calculadora */
+        .calc-panel { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 5px solid var(--med-blue); }
+        h1 { font-size: 1.8rem; color: var(--med-dark); margin-top: 0; letter-spacing: -0.5px; }
+        label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #64748b; }
+        input { width: 100%; padding: 14px; margin-bottom: 20px; border: 2px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 1rem; transition: 0.3s; }
+        input:focus { border-color: var(--med-blue); outline: none; }
+        .calc-btn { width: 100%; padding: 18px; background: var(--med-blue); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 1.05rem; cursor: pointer; transition: 0.2s; }
+        .calc-btn:hover { background: #0369a1; }
+        
+        /* Resultados & Botón Smartlink (Aparece Dinámicamente) */
+        #result-area { margin-top: 25px; display: none; padding: 25px; background: #f0fdf4; border: 2px dashed #bbf7d0; border-radius: 12px; text-align: center; }
+        .smart-btn { display: inline-block; margin-top: 15px; padding: 16px 20px; background: var(--accent); color: white; text-decoration: none; font-weight: 800; border-radius: 50px; box-shadow: 0 10px 15px rgba(16, 185, 129, 0.3); width: 100%; box-sizing: border-box; transition: transform 0.2s; }
+        .smart-btn:hover { transform: translateY(-2px); background: #059669; }
+        
+        /* Panel Derecho: SEO & Anuncio Nativo */
+        .info-panel { padding: 10px; }
+        .info-panel h2 { font-size: 1.5rem; color: var(--med-blue); margin-top: 0; }
+        .ad-container { margin: 30px 0; background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; overflow: hidden; }
+        footer { text-align: center; padding: 40px; font-size: 0.85rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">CALIFORNIA NURSE FINANCE | 2026 EDITION</div>
+    
+    <div class="container">
+        <div class="calc-panel">
+            <h1>#1 CA Nurse Refi Calc</h1>
+            <p style="font-size:0.95rem; color:#64748b; margin-bottom:25px;">Estimate your monthly savings before exploring private refinancing options.</p>
+            
+            <label>Current Student Loan Balance ($)</label>
+            <input type="number" id="balance" placeholder="e.g., 65000">
+            
+            <label>Current Interest Rate (%)</label>
+            <input type="number" id="currentRate" placeholder="e.g., 7.5">
+            
+            <label>Expected Refinance Rate (%)</label>
+            <input type="number" id="newRate" placeholder="e.g., 4.5">
+            
+            <button class="calc-btn" onclick="calculate()">Calculate Potential Savings</button>
+            
+            <div id="result-area"></div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>Optimize Your Nursing Debt</h2>
+            <p>In 2026, California nurses have unique opportunities to restructure their educational debt. Whether you operate in Los Angeles or the Bay Area, securing a lower interest rate can free up hundreds of dollars in your monthly budget.</p>
+            
+            <div class="ad-container">
+                <script async="async" data-cfasync="false" src="https://pl28879963.effectivegatecpm.com/3971cbb4233ab0d81635cde997026c7f/invoke.js"></script>
+                <div id="container-3971cbb4233ab0d81635cde997026c7f"></div>
+            </div>
+
+            <h2>State Forgiveness vs. Private Refinancing</h2>
+            <p>Always verify your eligibility for the California State Loan Repayment Program (SLRP) before refinancing federal loans, as private refinancing removes federal protections. If you hold private loans, comparing 2026 rates is an essential step toward financial independence.</p>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Libertad Pro Network - Medical Finance Division</footer>
+
+    <script>
+        function calculate() {
+            const b = parseFloat(document.getElementById('balance').value);
+            const cr = parseFloat(document.getElementById('currentRate').value) / 100 / 12;
+            const nr = parseFloat(document.getElementById('newRate').value) / 100 / 12;
+            const term = 120; // 10 years standard
+
+            if(b && cr && nr) {
+                const oldPmt = (b * cr) / (1 - Math.pow(1 + cr, -term));
+                const newPmt = (b * nr) / (1 - Math.pow(1 + nr, -term));
+                const savings = oldPmt - newPmt;
+
+                const res = document.getElementById('result-area');
+                res.style.display = 'block';
+                
+                if(savings > 0) {
+                    res.innerHTML = `
+                        <h3 style="color:var(--med-dark); margin-top:0; font-size: 1.4rem;">Est. Savings: $${savings.toFixed(2)} / month</h3>
+                        <p style="font-size:0.85rem; color:#475569; margin-bottom: 15px;">Over a standard 10-year term, you could save <strong>$${(savings * 120).toFixed(2)}</strong> in total interest.</p>
+                        <a href="https://www.effectivegatecpm.com/hurm39h4n?key=d2a96765cf244251cf92d4d705cc8a15" target="_blank" class="smart-btn">👉 Check 2026 Refinance Offers</a>
+                    `;
+                } else {
+                    res.innerHTML = `<h3 style="color:#ef4444; margin-top:0;">No Savings Detected</h3><p>Your current rate is already highly competitive in the CA market.</p>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
