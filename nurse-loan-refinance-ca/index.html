@@ -3,77 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurse Student Loan Refinance Calculator | California 2026</title>
-    <script src="https://pl2887951.effectivegatecpm.com/7d/b7/60/7db7603dd98fbf9a9c3338b181597f20.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>#1 Nurse Student Loan Refinance Calculator | California 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0056b3; --accent: #28a745; --dark: #0f172a; --light: #f8fafc; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: #fff; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-        .logo { font-weight: 800; color: var(--primary); }
+        :root { --primary: #0056b3; --bg: #f8fafc; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: #1e293b; margin: 0; line-height: 1.6; }
+        header { background: #fff; padding: 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
         .hero { padding: 40px 20px; text-align: center; background: white; }
-        .hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--dark); letter-spacing: -1px; }
-        .calculator-box { max-width: 500px; margin: -20px auto 40px; background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); border: 1px solid #f1f5f9; }
-        .input-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.85rem; color: #64748b; }
-        input { width: 100%; padding: 14px; border: 2px solid #f1f5f9; border-radius: 12px; font-size: 1rem; background: #f8fafc; }
-        button.main-btn { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
-        #result { margin-top: 25px; padding: 20px; background: #f0fdf4; border-radius: 12px; display: none; text-align: center; border: 1px solid var(--accent); }
-        #install-btn { display: none; margin: 20px auto; padding: 10px 20px; background: var(--dark); color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 0.8rem; }
-        .content-area { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .native-ad { margin: 30px 0; border-radius: 15px; overflow: hidden; background: #fff; border: 1px solid #eee; }
-        .network-links { background: #f1f5f9; padding: 30px; border-radius: 20px; margin-top: 50px; text-align: center; }
-        .link-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
-        .link-grid a { background: #fff; padding: 10px 15px; border-radius: 10px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.85rem; border: 1px solid #e2e8f0; }
-        footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; }
+        .calc-box { max-width: 500px; margin: -20px auto 40px; background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 2px solid #f1f5f9; border-radius: 12px; box-sizing: border-box; }
+        button { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
+        #result { margin-top: 20px; padding: 20px; background: #f0fdf4; border-radius: 12px; display: none; text-align: center; }
+        .content { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .ad-slot { margin: 30px 0; min-height: 250px; background: #fdfdfd; }
     </style>
 </head>
 <body>
-<header><div class="logo">NURSEFINANCE.CA</div></header>
-<section class="hero"><h1>California Nurse Loan Refi</h1><p>2026 Student Debt Optimization Tool</p></section>
-<div class="calculator-box">
-    <div class="input-group"><label>Total Debt ($)</label><input type="number" id="balance" placeholder="60000"></div>
-    <div class="input-group"><label>Current Rate (%)</label><input type="number" id="rate" placeholder="7.0" step="0.1"></div>
-    <div class="input-group"><label>New Rate (%)</label><input type="number" id="newRate" placeholder="4.2" step="0.1"></div>
-    <button class="main-btn" onclick="calculate()">Calculate My Savings</button>
+<header><div style="font-weight:800; color:var(--primary)">NURSEFINANCE.CA</div></header>
+<section class="hero"><h1>#1 Nurse Loan Refi</h1><p>California Nursing Debt Optimization Tool</p></section>
+<div class="calc-box">
+    <input type="number" id="bal" placeholder="Total Debt ($)">
+    <input type="number" id="rate" placeholder="Current Rate (%)" step="0.1">
+    <button onclick="calc()">Estimate Monthly Savings</button>
     <div id="result"></div>
-    <button id="install-btn">📥 Install This App</button>
 </div>
-<article class="content-area">
-    <h2>Financial Freedom for California Nurses</h2>
-    <p>Nurses in California face some of the highest education costs in the United States. However, with the 2026 economic shift, refinancing has become a powerful tool to regain control of your monthly budget. Whether you work in Los Angeles, San Diego, or San Francisco, reducing your interest rate can save you tens of thousands of dollars over the life of your loan.</p>
-    <div class="native-ad">
+<article class="content">
+    <h2>Maximizing Nursing Loan Forgiveness in CA</h2>
+    <p>California healthcare professionals often qualify for specific state-level repayment programs. Before refinancing with private lenders in 2026, compare your potential savings using this tool.</p>
+    <div class="ad-slot">
         <script async="async" data-cfasync="false" src="https://pl28879963.effectivegatecpm.com/3971cbb4233ab0d81635cde997026c7f/invoke.js"></script>
         <div id="container-3971cbb4233ab0d81635cde997026c7f"></div>
     </div>
-    <h2>California SLRP and Private Refinancing</h2>
-    <p>Before you refinance, it is vital to check your eligibility for the California State Loan Repayment Program (SLRP). This tool helps you compare the raw math of interest savings against potential government forgiveness. In 2026, many private lenders are offering specialized tiers for healthcare workers, recognizing the stability of the nursing profession in the Golden State.</p>
-    <div class="network-links">
-        <h4>Explore Our Professional Network</h4>
-        <div class="link-grid">
-            <a href="https://jsghomejsg.github.io/Smart-Apps-Hub/" target="_blank">Smart Apps Hub</a>
-            <a href="https://jsghomejsg.github.io/mis-apps-2026/" target="_blank">Utility Master Suite</a>
-        </div>
-    </div>
+    <h3>Frequently Asked Questions</h3>
+    <p><strong>Is refinancing always better?</strong> No, private refinancing may cause you to lose federal protection and forgiveness options like PSLF.</p>
 </article>
-<footer>&copy; 2026 Libertad Pro Network</footer>
 <script>
-    function calculate() {
-        const b = parseFloat(document.getElementById('balance').value);
-        const or = parseFloat(document.getElementById('rate').value)/100/12;
-        const nr = parseFloat(document.getElementById('newRate').value)/100/12;
-        if(b && or && nr) {
-            const op = (b*or)/(1-Math.pow(1+or,-120));
-            const np = (b*nr)/(1-Math.pow(1+nr,-120));
-            const save = op-np;
+    function calc() {
+        const b = document.getElementById('bal').value;
+        const r = document.getElementById('rate').value;
+        if(b && r) {
+            const savings = (b * (r/100)) / 12;
             const res = document.getElementById('result');
             res.style.display = 'block';
-            res.innerHTML = `<h3>Save $${save.toFixed(2)} / month</h3><p>Total savings: $${(save*120).toFixed(2)}</p>`;
+            res.innerHTML = `<h3>Est. Savings: $${savings.toFixed(2)}/mo</h3>`;
         }
     }
-    let defP; window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); defP = e; document.getElementById('install-btn').style.display = 'block'; });
-    document.getElementById('install-btn').addEventListener('click', async () => { if(defP) { defP.prompt(); defP = null; } });
 </script>
 </body>
 </html>
