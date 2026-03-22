@@ -1,0 +1,16 @@
+{
+  "name": "IRS Tax Tracker 2026",
+  "short_name": "TaxTracker",
+  "description": "Track your 2026 IRS Refund Status and potential delays.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0e14",
+  "theme_color": "#238636",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2654/2654519.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
