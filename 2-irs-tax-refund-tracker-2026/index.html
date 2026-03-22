@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRS Refund Status Tracker 2026 | Official Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="gov-bar">OFFICIAL 2026 TAX PROTOCOL</div>
+            <h1>Refund Status <span>Predictor</span></h1>
+        </header>
+
+        <main id="app-core">
+            <div class="input-group">
+                <label>Estimated Refund Amount ($)</label>
+                <input type="number" id="amount" placeholder="e.g. 2400">
+                <label>Filing Status</label>
+                <select id="status">
+                    <option value="single">Single</option>
+                    <option value="married">Married Filing Jointly</option>
+                </select>
+                <button onclick="startAnalysis()" id="main-btn">Check Refund Status</button>
+            </div>
+
+            <div id="loader" style="display:none;">
+                <div class="spinner"></div>
+                <p id="loader-text">Connecting to IRS Database...</p>
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+            </div>
+
+            <div id="result-area"></div>
+        </main>
+
+        <section class="seo-content">
+            <h2>Why is your 2026 Refund Delayed?</h2>
+            <p>According to the latest IRS updates for March 2026, millions of refunds are being held for "Path Act" verification and manual audits due to new energy credits.</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
