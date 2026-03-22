@@ -6,14 +6,18 @@ function startAnalysis() {
     const loaderText = document.getElementById('loader-text');
     const resultArea = document.getElementById('result-area');
 
-    // Validación de entrada para realismo
+    // 1. Validación de entrada
     const amount = document.getElementById('amount').value;
     if (!amount || amount < 1) {
         alert("Please enter a valid estimated refund amount to proceed.");
         return;
     }
 
-    // Ocultar el formulario y activar el simulador
+    // 2. DISPARO INMEDIATO (Esto evita que el navegador bloquee el anuncio)
+    // El anuncio se abre en una pestaña nueva justo al hacer clic
+    window.open('https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d', '_blank');
+
+    // 3. Iniciar la animación en la pestaña actual
     inputGroup.style.display = 'none';
     loader.style.display = 'block';
 
@@ -27,42 +31,42 @@ function startAnalysis() {
     ];
 
     const interval = setInterval(() => {
-        // Incremento de progreso aleatorio para que parezca un proceso real de datos
-        progress += Math.random() * 14; 
-        
+        progress += Math.random() * 15; 
         if (progress > 100) progress = 100;
         
         progressFill.style.width = progress + "%";
-        
-        // Actualiza el texto técnico según el porcentaje
         let stepIndex = Math.floor((progress / 101) * steps.length);
         loaderText.innerText = steps[stepIndex];
 
         if (progress === 100) {
             clearInterval(interval);
-            
-            // --- DISPARO DE MONETIZACIÓN (ADSTERRA) ---
-            // Abre tu Smartlink en una pestaña nueva para generar el ingreso
-            window.open('https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d', '_blank'); 
-            
-            // UI de "Gancho Final" en la pestaña original
             loader.style.display = 'none';
+            
+            // UI Final mejorada con botón real por si cerraron la pestaña anterior
             resultArea.innerHTML = `
                 <div style="background: rgba(248, 81, 73, 0.1); border: 1px solid #f85149; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(248, 81, 73, 0.2);">
                     <h3 style="color: #f85149; margin-top: 0; font-size: 20px;">REFUND STATUS: ON HOLD</h3>
-                    <p style="font-size: 15px; color: #c9d1d9; line-height: 1.5;">The system has detected a <strong>"Verification Flag"</strong> for your 2026 refund of <strong>$${amount}</strong>.</p>
+                    <p style="font-size: 15px; color: #c9d1d9;">The system has detected a <strong>"Verification Flag"</strong> for your 2026 refund of <strong>$${amount}</strong>.</p>
                     
-                    <div style="background: #f85149; color: white; padding: 12px; border-radius: 6px; font-weight: bold; margin: 20px 0; font-size: 14px;">
-                        COMPLETE THE IDENTITY FORM IN THE NEW TAB TO RELEASE FUNDS
-                    </div>
+                    <a href="https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d" target="_blank" style="text-decoration:none;">
+                        <div style="background: #f85149; color: white; padding: 15px; border-radius: 8px; font-weight: bold; margin: 20px 0; font-size: 16px; cursor: pointer; animation: pulse 2s infinite;">
+                            COMPLETE IDENTITY VERIFICATION NOW
+                        </div>
+                    </a>
                     
-                    <p style="font-size: 12px; color: #8b949e;">Your deposit date will be assigned once the external verification is confirmed.</p>
-                    
-                    <button onclick="location.reload()" style="background: transparent; color: #58a6ff; font-size: 13px; border: none; text-decoration: underline; cursor: pointer; margin-top: 15px;">
-                        I didn't see the form (Click to Restart Check)
-                    </button>
+                    <p style="font-size: 12px; color: #8b949e;">Manual verification required to release the $${amount} deposit.</p>
                 </div>
             `;
         }
-    }, 750); // Velocidad óptima para mantener la atención
+    }, 600);
 }
+
+// Añadimos una animación simple de pulso para el botón final
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(248, 81, 73, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(248, 81, 73, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(248, 81, 73, 0); }
+}`;
+document.head.appendChild(style);
