@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Bill Relief Program | March 2026 Energy Assistance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .utility-header { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); }
+        .loader { border-top-color: #059669; animation: spinner 1.3s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .pulse-btn { animation: pulse-shadow 2s infinite; }
+        @keyframes pulse-shadow { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+    </style>
+</head>
+<body class="bg-[#f3f4f6] font-sans antialiased text-slate-900">
+
+    <div class="max-w-xl mx-auto min-h-screen bg-white shadow-2xl flex flex-col border-x border-gray-200">
+        
+        <div class="bg-gray-50 py-2 px-4 text-[9px] flex items-center border-b border-gray-200 font-bold text-gray-400 uppercase tracking-widest">
+            <svg class="h-3 mr-2 text-green-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 012.49-1.333c.036.002.01.033.033.033.48.019.902.047 1.24.088.34.041.517.101.517.101a.75.75 0 01.31 1.28c-.01.01-.02.022-.01.024l-.448.445c-.17.17-.33.319-.45.448-.12.13-.23.23-.3.29a.75.75 0 01-1.03.01c-.06-.05-.17-.16-.3-.29-.13-.13-.29-.28-.45-.45l-.34-.35c-.02-.01-.03-.02-.04-.03a2.64 2.64 0 01-2.4 1.33c-.03 0-.06 0-.09-.01a2.641 2.641 0 01-2.48-1.333c.033 0 .01-.039.033-.034.338-.041.76-.07 1.2-.087.441-.018.614-.046.614-.046a.75.75 0 01.62 1.356s-.177.06-.517.101c-.338.041-.76.07-1.24.088-.033 0-.028-.03-.033-.033a2.641 2.641 0 01-2.49 1.332 31.365 31.365 0 00-.613-3.58c-.226-.966-.506-1.93-.84-2.734-.167-.403-.356-.785-.57-1.116-.208-.322-.477-.65-.822-.88a1 1 0 00-1.45.385c-.175.263-.358.574-.537.94-.347.708-.653 1.587-.908 2.547A27.96 27.96 0 001.066 8.67c-.003.048-.01.097-.01.145a6.782 6.782 0 00.504 2.595 6.742 6.742 0 004.27 4.124c.255.085.519.145.788.177l.527.06c.11.015.22.03.33.03h.74c.11 0 .22-.015.33-.03l.527-.06a6.748 6.748 0 005.402-5.446c.048-.285.08-.574.08-.865 0-.048-.007-.097-.01-.145a27.96 27.96 0 00-.546-3.715c-.255-.96-.561-1.839-.908-2.547-.179-.366-.362-.677-.537-.94z" clip-rule="evenodd" /></svg>
+            U.S. Department of Energy & Utility Assistance Network
+        </div>
+
+        <header class="utility-header text-white p-6 shadow-md">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/10 p-2 rounded-full backdrop-blur-sm">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black uppercase tracking-tight leading-none">Utility Bill Assistance</h1>
+                    <p class="text-[10px] opacity-75 font-bold tracking-widest mt-1 uppercase">March 2026 Emergency Credit Initiative</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <div id="step-1" class="p-6 space-y-6">
+                <div class="bg-green-50 border-l-8 border-green-600 p-5 rounded-r-xl shadow-sm">
+                    <h3 class="text-green-900 font-black text-xs uppercase mb-1">Status: High Availability</h3>
+                    <p class="text-[11px] text-green-800 leading-snug font-medium">Extra credits for March 2026 heating and electricity bills have been released. Households with income under $65k/year are urged to apply before the March 31st shut-off protection deadline.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-5 shadow-inner">
+                    <h2 class="text-center text-emerald-900 font-black text-sm uppercase tracking-widest border-b border-emerald-100 pb-3">Household Eligibility Screener</h2>
+                    <form id="utility-form" class="space-y-4">
+                        <div>
+                            <label class="text-[10px] font-black text-gray-400 uppercase ml-1">Current Service Provider</label>
+                            <input type="text" required placeholder="e.g. PG&E, ConEd, Duke" class="w-full bg-white border-2 border-gray-200 rounded-xl p-4 font-bold outline-none focus:border-emerald-500 transition-colors">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="text-[10px] font-black text-gray-400 uppercase">Zip Code</label>
+                                <input type="number" required class="w-full bg-white border-2 border-gray-200 rounded-xl p-4 font-bold outline-none focus:border-emerald-500">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-black text-gray-400 uppercase">Shut-off Notice?</label>
+                                <select class="w-full bg-white border-2 border-gray-200 rounded-xl p-4 font-bold outline-none focus:border-emerald-500">
+                                    <option>No</option><option>Yes (Urgent)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-5 rounded-2xl shadow-xl text-xl uppercase tracking-tighter transform transition active:scale-95">
+                            Check Energy Credit »
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mt-8 space-y-8 pb-10">
+                    <div>
+                        <h4 class="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4 text-center">March 2026 Credit Guidelines</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="p-3 bg-white border border-gray-100 rounded-lg shadow-sm text-center">
+                                <span class="block text-emerald-700 font-black text-lg">$500+</span>
+                                <span class="text-[8px] font-bold uppercase text-gray-400">Avg. Relief</span>
+                            </div>
+                            <div class="p-3 bg-white border border-gray-100 rounded-lg shadow-sm text-center">
+                                <span class="block text-emerald-700 font-black text-lg">FAST</span>
+                                <span class="text-[8px] font-bold uppercase text-gray-400">Verificaton</span>
+                            </div>
+                            <div class="p-3 bg-white border border-gray-100 rounded-lg shadow-sm text-center">
+                                <span class="block text-emerald-700 font-black text-lg">2026</span>
+                                <span class="text-[8px] font-bold uppercase text-gray-400">Funding</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-8">
+                        <h4 class="font-black text-emerald-900 text-sm mb-4 uppercase italic">How to Claim Your Credit:</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+                                <p class="text-[11px] font-medium text-gray-600">Enter your utility provider and residential zip code to verify local funding availability.</p>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+                                <p class="text-[11px] font-medium text-gray-600">Complete the digital energy audit to determine your household's hardship tier.</p>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+                                <p class="text-[11px] font-medium text-gray-600">Unlock your Energy Case ID and apply the credit directly to your monthly statement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden flex flex-col items-center justify-center py-24 px-10 text-center">
+                <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-100 h-24 w-24 mb-6"></div>
+                <h3 class="text-emerald-900 text-xl font-black animate-pulse uppercase italic">Scanning LIHEAP Database</h3>
+                <p class="text-gray-500 text-sm mt-4 font-bold tracking-tight">Checking March 2026 emergency credit allotments in your region...</p>
+                <div class="mt-8 w-full bg-gray-100 rounded-full h-1.5 max-w-xs">
+                    <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 88%"></div>
+                </div>
+            </div>
+
+            <div id="step-final" class="hidden p-8 text-center space-y-8">
+                <div class="bg-emerald-600 p-8 rounded-[2rem] shadow-2xl text-white relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-4xl font-black uppercase italic tracking-tighter leading-none">Credit Identified</h2>
+                        <p class="text-xs font-bold opacity-80 mt-2 tracking-[0.3em] uppercase border-b border-emerald-400 pb-2 mb-4">Case #E-99021-MARCH</p>
+                        <p class="text-[11px] font-medium opacity-90 leading-tight">Your household is eligible for an Energy Credit of up to <span class="text-yellow-300 font-black text-lg">$582.00</span> applied directly to your next statement.</p>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 opacity-10">
+                        <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-gray-700 font-black text-lg leading-tight">To claim your March 2026 Energy Credit and stop any pending shut-off, you must verify your case ID below:</p>
+                    
+                    <a href="https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d" class="block bg-emerald-700 hover:bg-emerald-800 text-white font-black py-6 rounded-2xl shadow-2xl text-2xl uppercase tracking-tighter transform transition active:scale-95 pulse-btn">
+                        Claim Energy Credit Now »
+                    </a>
+                </div>
+
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest italic">Verification ID: LIH-2026-X88. Session expires in 10:00 minutes to prevent fund depletion.</p>
+            </div>
+
+        </main>
+
+        <footer class="p-8 bg-slate-900 text-white text-[9px] leading-relaxed opacity-80">
+            <div class="flex justify-between items-center pb-6 mb-6 border-b border-slate-700">
+                <div class="font-black uppercase tracking-widest text-emerald-400">Energy Assist Portal</div>
+                <div class="flex space-x-3 font-bold opacity-60">
+                    <span>Privacy</span><span>Terms</span><span>Legal</span>
+                </div>
+            </div>
+            <p class="opacity-40 italic">Energy Assistance Network is a private information provider helping households access public and private utility relief programs. We are not a government agency. Information is current as of March 2026. If you have no power or heat, please contact your emergency local services.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('utility-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('step-final').classList.remove('hidden');
+                window.scrollTo(0,0);
+            }, 3600);
+        });
+    </script>
+</body>
+</html>
