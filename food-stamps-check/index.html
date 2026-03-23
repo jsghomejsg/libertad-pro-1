@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAP Benefits & Food Stamps Eligibility - March 2026 Official Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ebt-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .loader { border-top-color: #1e3a8a; animation: spinner 1s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .success-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    </style>
+</head>
+<body class="bg-[#f0f2f5] font-sans antialiased text-gray-900">
+
+    <div class="max-w-xl mx-auto min-h-screen bg-white shadow-2xl flex flex-col border-x border-gray-200">
+        
+        <div class="bg-gray-100 py-1.5 px-4 text-[10px] flex items-center border-b border-gray-200 font-bold text-gray-500 uppercase tracking-tighter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" class="h-3 mr-2" alt="US Flag">
+            An official website of the Food and Nutrition Service
+        </div>
+
+        <header class="bg-blue-900 text-white p-6 border-b-4 border-orange-500 shadow-md">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white p-2 rounded-lg shadow-inner">
+                        <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black uppercase tracking-tighter leading-none">SNAP Assistance</h1>
+                        <p class="text-[10px] opacity-80 font-bold tracking-widest mt-1">Supplemental Nutrition Assistance Program</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="bg-orange-500 text-[9px] font-black px-2 py-1 rounded shadow-sm">MARCH 2026 UPDATES</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            
+            <div id="step-1" class="p-6 space-y-6">
+                <div class="bg-blue-50 border-l-8 border-blue-600 p-5 rounded-r-xl shadow-sm">
+                    <h3 class="text-blue-900 font-black text-xs uppercase mb-1">New Allotments Approved</h3>
+                    <p class="text-[11px] text-blue-800 leading-snug">Emergency allotments for March 2026 have been activated. Maximum benefit amounts are being distributed to eligible households due to cost-of-living adjustments.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-2xl border-2 border-gray-100 space-y-5">
+                    <h2 class="text-center text-blue-900 font-black text-sm uppercase tracking-widest border-b pb-3">Eligibility Screener</h2>
+                    <form id="snap-form" class="space-y-4">
+                        <div>
+                            <label class="text-[10px] font-black text-gray-400 uppercase">Household Size</label>
+                            <select required class="w-full bg-white border-2 border-gray-200 rounded-xl p-4 font-bold text-lg outline-none focus:border-blue-500 transition-colors">
+                                <option>1 Person</option><option>2-3 People</option><option>4+ People</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-black text-gray-400 uppercase">Current Benefits Status</label>
+                            <div class="grid grid-cols-2 gap-3 mt-1">
+                                <label class="border-2 border-gray-200 rounded-xl p-3 text-center font-bold text-sm cursor-pointer hover:bg-white hover:border-blue-500 transition-all">
+                                    <input type="radio" name="status" class="hidden"> New Applicant
+                                </label>
+                                <label class="border-2 border-gray-200 rounded-xl p-3 text-center font-bold text-sm cursor-pointer hover:bg-white hover:border-blue-500 transition-all">
+                                    <input type="radio" name="status" class="hidden"> Renewal/Extra
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full ebt-gradient text-white font-black py-5 rounded-2xl shadow-xl text-xl uppercase tracking-tighter transform transition active:scale-95">
+                            Calculate My Benefits »
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mt-8 space-y-8 pb-6">
+                    <div>
+                        <h4 class="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-4 text-center">March 2026 Program Details</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-4 bg-white border border-gray-200 rounded-xl shadow-sm">
+                                <p class="text-blue-900 font-bold text-[11px] mb-1">Max Benefit Amount</p>
+                                <p class="text-[10px] text-gray-500 leading-tight">Up to $291 per person depending on state-specific emergency triggers.</p>
+                            </div>
+                            <div class="p-4 bg-white border border-gray-200 rounded-xl shadow-sm">
+                                <p class="text-blue-900 font-bold text-[11px] mb-1">Asset Waiver</p>
+                                <p class="text-[10px] text-gray-500 leading-tight">Resource limits waived for many zip codes for the March funding cycle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="font-black text-blue-900 text-sm mb-4">Official Notice to Applicants</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-3 text-[11px]">
+                                <span class="bg-green-500 text-white rounded-full p-1 leading-none text-[8px]">✓</span>
+                                <p><span class="font-bold">Fast Processing:</span> Verification takes less than 5 minutes through the digital EBT gateway.</p>
+                            </li>
+                            <li class="flex items-start space-x-3 text-[11px]">
+                                <span class="bg-green-500 text-white rounded-full p-1 leading-none text-[8px]">✓</span>
+                                <p><span class="font-bold">Retroactive Pay:</span> Approved applicants may receive backdated funds to March 1st.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden flex flex-col items-center justify-center py-24 px-10 text-center">
+                <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-100 h-24 w-24 mb-6"></div>
+                <h3 class="text-blue-900 text-xl font-black animate-pulse uppercase">Connecting to SNAP Database</h3>
+                <p class="text-gray-500 text-sm mt-4 font-bold italic">Checking state-level allotment availability... Verifying EBT card compatibility...</p>
+            </div>
+
+            <div id="step-final" class="hidden p-8 text-center space-y-8">
+                <div class="ebt-gradient p-8 rounded-[2.5rem] shadow-2xl text-white transform -rotate-1 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-4xl font-black uppercase italic tracking-tighter leading-none">Qualified</h2>
+                        <p class="text-xs font-bold opacity-90 mt-2 tracking-widest uppercase border-t border-white/20 pt-2">Max Emergency Allotment Approved</p>
+                        <p class="mt-6 text-2xl font-black text-yellow-300">+$291.00 / Month</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-gray-700 font-black text-lg leading-tight italic">Action Required: You must unlock your case file to confirm the benefit transfer to your EBT account.</p>
+                    
+                    <a href="https://www.profitablecpmratenetwork.com/kqjsxz1r?key=1eb02dc62189c90cdd691d656041593d" class="block bg-orange-600 hover:bg-orange-700 text-white font-black py-6 rounded-2xl shadow-2xl text-2xl uppercase tracking-tighter transform transition active:scale-95 success-pulse">
+                        Unlock EBT Case Now »
+                    </a>
+                </div>
+
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Transaction ID: SNAP-8821-MARCH-X. Verification link expires in 15:00 minutes.</p>
+            </div>
+
+        </main>
+
+        <footer class="p-8 bg-slate-900 text-white text-[9px] leading-relaxed opacity-90">
+            <div class="grid grid-cols-2 gap-6 pb-6 mb-6 border-b border-slate-700">
+                <div>
+                    <h5 class="font-black text-blue-400 mb-2 uppercase">Official Links</h5>
+                    <ul class="space-y-1 opacity-60 font-bold">
+                        <li>FNS Home</li><li>SNAP Eligibility</li><li>USDA Guidelines</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-blue-400 mb-2 uppercase">Help Center</h5>
+                    <ul class="space-y-1 opacity-60 font-bold">
+                        <li>Report Fraud</li><li>State Contacts</li><li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="opacity-40">SNAP Assistance Assistant is a private portal for benefit screening and information. This site is not a government agency but follows all Federal Nutrition Assistance guidelines for 2026. For immediate hunger relief, contact your state's social services office.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('snap-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('step-final').classList.remove('hidden');
+                window.scrollTo(0,0);
+            }, 3500);
+        });
+    </script>
+</body>
+</html>
